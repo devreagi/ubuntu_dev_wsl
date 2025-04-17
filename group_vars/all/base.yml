@@ -31,8 +31,3 @@ base_developer_tools:
   - python3-pep8
   - python3-pip
   - tree
-
-golang_tools:
-  - github.com/charmbracelet/glow@latest # Render markdown on the CLI
-  - github.com/jesseduffield/lazygit@latest # simple terminal UI for git commands
-  - github.com/wagoodman/dive@latest # tool for exploring each layer in a docker image

@@ -91,9 +91,6 @@ export PATH=$PATH:$HOME/.local/bin
 # make sure pipenv creates virtualenv dir in current dir under .venv
 export PIPENV_VENV_IN_PROJECT=1
 
-# make vagrant use virtualbox as the default provider
-export VAGRANT_DEFAULT_PROVIDER='virtualbox'
-
 # extra aliases, functions and variables can be defined in these files
 [[ -f ~/.shell_aliases ]] && source ~/.shell_aliases
 [[ -f ~/.shell_functions ]] && source ~/.shell_functions

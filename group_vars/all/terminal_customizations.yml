@@ -1,10 +1,6 @@
 ---
 # nerd fonts from https://github.com/ryanoasis/nerd-fonts
 terminal_customizations_nerd_fonts:
-  # - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/Bold/CaskaydiaCoveNerdFontMono-BoldItalic.ttf # don't remove; alacritty config uses this
-  # - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/Bold/CaskaydiaCoveNerdFontMono-Bold.ttf # don't remove; alacritty config uses this
-  # - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/Regular/CaskaydiaCoveNerdFontMono-Italic.ttf # don't remove; alacritty config uses this
-  # - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/Regular/CaskaydiaCoveNerdFontMono-Regular.ttf # don't remove; alacritty config uses this
   - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Bold/FiraCodeNerdFontMono-Bold.ttf
   - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFontMono-Regular.ttf # don't remove; tilix profile uses this
   - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/BoldItalic/JetBrainsMonoNerdFontMono-BoldItalic.ttf
@@ -23,7 +19,3 @@ terminal_customizations_nerd_fonts:
   - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/VictorMono/Bold/VictorMonoNerdFontMono-Bold.ttf
   - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/VictorMono/Italic/VictorMonoNerdFontMono-Italic.ttf
   - https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/VictorMono/Regular/VictorMonoNerdFontMono-Regular.ttf
-
-terminal_customizations_tmux_plugin_repo: "https://github.com/tmux-plugins/tpm"
-
-terminal_customizations_alacritty_themes_repo: "https://github.com/alacritty/alacritty-theme"
