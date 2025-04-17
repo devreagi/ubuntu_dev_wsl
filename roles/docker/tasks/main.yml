@@ -58,7 +58,7 @@
   register: docker_version
 
 - name: Verify Docker Compose installation
-  ansible.builtin.command: docker-compose --version
+  ansible.builtin.command: docker compose version
   changed_when: false
   register: docker_compose_version
 
