@@ -1,0 +1,4 @@
+---
+# Docker role variables
+docker_version: latest
+docker_compose_version: latest
