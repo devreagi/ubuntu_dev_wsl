@@ -44,8 +44,6 @@
         line: enabled=0
         state: present
       when: apport_file.stat.exists
-      become: true
-      become_user: "{{ local_username }}"
 
 # It may be desirable to set this to zero, so that application memory is retained as long as possible at the expense
 # of the page cache. When there is still a memory shortage, the kernel can still use swapping.
