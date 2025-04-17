@@ -43,6 +43,7 @@ The `main.yml` playbook will take anything from 15 minutes to an hour to complet
 After all is done, restart wsl.
 
 ```bash
+exit
 wsl --shutdown
 wsl -d Ubuntu
 ```
