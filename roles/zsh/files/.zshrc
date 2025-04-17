@@ -42,7 +42,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 #antigen theme romkatv/powerlevel10k
 
 # bullet train theme
-https://github.com/caiogondim/bullet-train.zsh
+# https://github.com/caiogondim/bullet-train.zsh
 antigen theme caiogondim/bullet-train.zsh bullet-train
 
 # spaceship theme

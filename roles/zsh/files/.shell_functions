@@ -46,12 +46,12 @@ function update_vagrant_boxes {
     export IFS=$OLDIFS
 }
 
-# # update existing docker images
-# function update_docker_images {
-#     docker images --format "{{.Repository}}:{{.Tag}}" | grep -v "<none>" | sort -u | xargs -L1 docker pull
-#     # cleanup images containing no tags; usually the ones which get updated
-#     if nonetags=$(docker images | grep "<none>"); then awk '{ print $3 }' <<< "$nonetags" | xargs -L1 docker rmi -f; fi
-# }
+# update existing docker images
+function update_docker_images {
+    docker images --format "{{.Repository}}:{{.Tag}}" | grep -v "<none>" | sort -u | xargs -L1 docker pull
+    # cleanup images containing no tags; usually the ones which get updated
+    if nonetags=$(docker images | grep "<none>"); then awk '{ print $3 }' <<< "$nonetags" | xargs -L1 docker rmi -f; fi
+}
 
 ### BEGIN night light control ###
 function night_light_enable {
