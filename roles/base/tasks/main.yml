@@ -93,6 +93,14 @@
   become: true
   become_user: "{{ local_username }}"
 
+- name: create .gnupg dir
+  ansible.builtin.file:
+    path: "~{{ local_username }}/.gnupg"
+    state: directory
+    mode: "0700"
+  become: true
+  become_user: "{{ local_username }}"
+
 - name: install download tools
   ansible.builtin.apt:
     name: "{{ base_download_tools }}"
