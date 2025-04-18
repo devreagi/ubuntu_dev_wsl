@@ -1,22 +1,36 @@
 ---
-- block:
-    - name: create local fonts directory
-      ansible.builtin.file:
-        path: "~{{ local_username }}/.local/share/fonts"
-        state: directory
+- name: Create local fonts directory
+  ansible.builtin.file:
+    path: "~{{ local_username }}/.local/share/fonts"
+    state: directory
+    mode: "0755"
   become: true
   become_user: "{{ local_username }}"
 
-- block:
-    - name: download nerd fonts to local fonts folder
+- name: Download Nerd Fonts or use local fallback
+  block:
+    - name: Attempt to download Nerd Fonts
       ansible.builtin.get_url:
-        url: "{{ item  }}"
-        dest: "~{{ local_username }}/.local/share/fonts/"
-      with_items: "{{ terminal_customizations_nerd_fonts }}"
-  become: true
-  become_user: "{{ local_username }}"
+        url: "{{ item }}"
+        dest: "~{{ local_username }}/.local/share/fonts/{{ item | basename }}"
+        mode: "0644"
+      loop: "{{ terminal_customizations_nerd_fonts }}"
+      register: download_result
+      ignore_errors: true
+      become: true
+      become_user: "{{ local_username }}"
 
-- name: refresh fonts cache
+    - name: Copy local font files if download fails
+      ansible.builtin.copy:
+        src: "fonts/{{ item | basename }}"
+        dest: "~{{ local_username }}/.local/share/fonts/{{ item | basename }}"
+        mode: "0644"
+      loop: "{{ terminal_customizations_nerd_fonts }}"
+      when: download_result.results | select('failed') | list | length > 0
+      become: true
+      become_user: "{{ local_username }}"
+
+- name: Refresh fonts cache
   ansible.builtin.shell: "fc-cache -fv"
   become: true
   become_user: "{{ local_username }}"
